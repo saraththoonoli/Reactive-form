@@ -1,0 +1,130 @@
+<div class="container">
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <h1>Enter Book Details</h1>
+    <div class="row-one">
+      <!-- Book name -->
+      <div class="form-group">
+        <label for="bookName">Book Name:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="bookName"
+          formControlName="bookName"
+        />
+        <div
+          *ngIf="bookForm.get('bookName') && bookForm.get('bookName').touched"
+        >
+          Book Name is required.
+        </div>
+      </div>
+      <!-- Author details -->
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="author"
+          formControlName="author"
+        />
+        <div *ngIf="bookForm.get('author') && bookForm.get('author').touched">
+          Author is required.
+        </div>
+      </div>
+    </div>
+    <div class="row-two">
+      <!-- Publications details -->
+      <div class="form-group">
+        <label for="publication">Publication:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="publication"
+          formControlName="publication"
+        />
+      </div>
+      <!-- price details -->
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input
+          class="form-control"
+          type="number"
+          id="price"
+          formControlName="price"
+        />
+        <div *ngIf="bookForm.get('price') && bookForm.get('price').touched">
+          Price is required.
+        </div>
+      </div>
+    </div>
+    <!-- genre details -->
+    <div class="row-three">
+      <div class="form-group">
+        <label for="genre">genre:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="genre"
+          formControlName="genre"
+        />
+        <div *ngIf="bookForm.get('genre') && bookForm.get('genre').touched">
+          genre is required.
+        </div>
+      </div>
+
+      <!-- country details -->
+      <div class="form-group">
+        <label for="country">country:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="country"
+          formControlName="country"
+        />
+        <div *ngIf="bookForm.get('country') && bookForm.get('country').touched">
+          country is required.
+        </div>
+      </div>
+    </div>
+    <!-- published date -->
+    <div class="row-four">
+      <div class="form-group">
+        <label for="publishedDate">Published Date:</label>
+        <input
+          class="form-control"
+          type="date"
+          id="publishedDate"
+          formControlName="publishedDate"
+        />
+        <div
+          *ngIf="
+            bookForm.get('publishedDate') &&
+            bookForm.get('publishedDate').touched
+          "
+        >
+          Published Date is required.
+        </div>
+      </div>
+      <!-- discription details -->
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea
+          class="form-control"
+          id="description"
+          formControlName="description"
+        ></textarea>
+        <div
+          *ngIf="
+            bookForm.get('description') && bookForm.get('description').touched
+          "
+        >
+          Description is required.
+        </div>
+      </div>
+    </div>
+    <!-- submit button -->
+    <div class="form-group submit">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
